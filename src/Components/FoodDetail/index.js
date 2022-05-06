@@ -1,20 +1,11 @@
 import React, { Component } from "react";
-import { useState } from "react";
 import axios from "../../axios";
 import MyLayout from "../MyLayout";
-import food from "../../assets/food.jpg";
 
 import Alert from "react-bootstrap/Alert";
 import { HeartIcon, ShoppingBagIcon } from "@heroicons/react/solid";
 
 export default class FoodDetail extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      mainPicture: 0
-    };
-  }
   state = {
     name: null,
     photo: null,
@@ -32,12 +23,6 @@ export default class FoodDetail extends Component {
         name: null,
         quantity: null,
         type: null,
-      },
-    ],
-    pictures: [
-      {
-        src: null,
-        alt: null,
       },
     ],
   };
@@ -119,7 +104,6 @@ export default class FoodDetail extends Component {
         });
       });
   };
-
   starsNumber = Math.floor(this.state.rating);
   isHalfStar = !Number.isInteger(this.state.rating);
   emptyStars = 5 - Math.ceil(this.state.rating);
@@ -148,50 +132,13 @@ export default class FoodDetail extends Component {
         <div className="mx-auto px-4 w-full max-w-7xl bg-white text-gray-700">
           <div className="flex flex-col lg:flex-row">
             {/* :PICTURES CONTAINER */}
-            <div className="py-8 w-full lg:w-1/2 flex flex-col items-center">
+            <div className="py-8 w-full lg:w-1/2 flex flex-col items-center bg-[url('file:///C:/Users/biderya.g/Desktop/Site-01/Frontend/src/assets/food.jpg')]">
               {/* ::Like Button */}
               <span className="self-start ml-10">
                 <button className="text-gray-300 hover:text-red-500">
                   <HeartIcon className="w-10 h-10" />
                 </button>
               </span>
-              {/* ::Main Picture */}
-              <div className="w-auto h-56 sm:h-72 lg:h-full max-h-96 overflow-hidden">
-                <img
-                  src={this.state.pictures[this.state.mainPicture].src}
-                  alt={this.state.pictures[this.state.mainPicture].alt}
-                  className="object-contain w-full h-full"
-                />
-              </div>
-              {/* ::Gallery */}
-              <div className="mt-6 mx-auto">
-                <ul className="grid grid-flow-col auto-cols-fr gap-4">
-                  {this.state.pictures
-                    .slice(0, 4) // Here you can manage the number of pictures displayed
-                    .map((picture, index) => (
-                      <li
-                        key={picture.alt}
-                        className={`col-span-1 p-1 w-16 rounded border-2 ${
-                          index === this.state.mainPicture
-                            ? "border-yellow-600"
-                            : "border-transparent"
-                        }`}
-                      >
-                        <button
-                          type="button"
-                          className="block h-full rounded overflow-hidden"
-                          onClick={() => this.setState({index: this.state.mainPicture})}
-                        >
-                          <img
-                            src={picture.src}
-                            alt={picture.alt}
-                            className="object-contain"
-                          />
-                        </button>
-                      </li>
-                    ))}
-                </ul>
-              </div>
             </div>
 
             {/* :PRODUCT DETAILS */}
