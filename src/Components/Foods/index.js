@@ -2,12 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "../../axios";
 // import Spinner from "../Spinner/index";
 import { Link } from "react-router-dom";
-import { Card, Spinner } from "react-bootstrap";
+import {Spinner } from "react-bootstrap";
 import { Row, Col, InputGroup, FormControl } from "react-bootstrap";
 import MyLayout from "../../Components/MyLayout";
 import "./style.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import food from "../../assets/food.jpg";
 // import { SERVERAPI } from "../../constants/routes";
 

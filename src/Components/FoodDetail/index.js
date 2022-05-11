@@ -151,7 +151,7 @@ export default class FoodDetail extends Component {
                 </h1>
                 {/* :::Description */}
                 <p className="mt-10 text-base text-gray-500">
-                  {this.state.name}
+                  {this.state.content}
                 </p>
                 {/* :::Features */}
                 <ul className="my-5 flex flex-col space-y-2">
