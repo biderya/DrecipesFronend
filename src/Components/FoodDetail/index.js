@@ -132,7 +132,7 @@ export default class FoodDetail extends Component {
         <div className="mx-auto px-4 w-full max-w-7xl bg-white text-gray-700">
           <div className="flex flex-col lg:flex-row">
             {/* :PICTURES CONTAINER */}
-            <div className="py-8 w-full lg:w-1/2 flex flex-col items-center bg-[url('file:///C:/Users/biderya.g/Desktop/Site-01/Frontend/src/assets/food.jpg')]">
+            <div className="py-8 w-full lg:w-1/2 flex flex-col items-center bg-[url('../../assets/food.jpg">
               {/* ::Like Button */}
               <span className="self-start ml-10">
                 <button className="text-gray-300 hover:text-red-500">
