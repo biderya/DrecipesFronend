@@ -87,9 +87,9 @@ const Foods = () => {
                         <div className="ver_mas text-center">
                           <h2>Үзэх</h2>
                         </div>
-                        <article className="text-left">
+                        <article className="text-left max-w-xs">
                           <h2>{el.name}</h2>
-                          <h4>{el.content}</h4>
+                          <h4 className="truncate">{el.content}</h4>
                         </article>
                         <img src={foodImg} alt />
                       </div>
