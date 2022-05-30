@@ -30,7 +30,7 @@ h1 {
 .container_foto h2 {
   color: #fff;
   font-weight: 800;
-  font-size: 25px;
+  font-size: 19px;
   border-bottom: #fff solid 1px;
 }
 
@@ -44,7 +44,7 @@ h1 {
   width: 100%;
   top: 0;
   left: 0;
-  opacity: 0.4;
+  opacity: 0.8;
   -webkit-transition: all 4s ease;
   -moz-transition: all 4s ease;
   -o-transition: all 4s ease;
@@ -53,7 +53,6 @@ h1 {
 }
 
 .ver_mas {
-  background-color: #feb66c;
   position: absolute;
   overflow: hidden;
   height: 40px;
@@ -94,11 +93,10 @@ h1 {
   }
 }
 @media only screen and (max-width: 467px) {
-	.ver_mas {
-	  display: none;
-	}
+  .ver_mas {
+    display: none;
   }
-  
+}
 
 .ver_mas span {
   font-size: 40px;

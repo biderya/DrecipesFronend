@@ -18,13 +18,7 @@ export default class FoodDetail extends Component {
     success: null,
     deleted: null,
     loading: false,
-    ingredients: [
-      {
-        name: null,
-        quantity: null,
-        type: null,
-      },
-    ],
+    ingredients: null,
   };
 
   handleType = (e) => {
@@ -42,10 +36,6 @@ export default class FoodDetail extends Component {
   };
 
   componentDidMount() {
-    console.log(
-      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      this.props.match.params.id
-    );
     this.setState({ loading: true });
     axios
       .get("foods/" + this.props.match.params.id)
@@ -132,8 +122,12 @@ export default class FoodDetail extends Component {
         <div className="mx-auto px-4 w-full max-w-7xl bg-white text-gray-700">
           <div className="flex flex-col lg:flex-row">
             {/* :PICTURES CONTAINER */}
-            <div className="py-8 w-full lg:w-1/2 flex flex-col items-center bg-[url('C:/Users/user/OneDrive/Desktop/diplom_re/DrecipesFronend/src/assets/food.jpg')]">
+            <div className="py-8 w-full lg:w-1/2 flex flex-col items-center">
               {/* ::Like Button */}
+              <img
+                src={`http://localhost:8000/upload/${this.state.photo}`}
+                className="w-full h-full"
+              />
               <span className="self-start ml-10">
                 <button className="text-gray-300 hover:text-red-500">
                   <HeartIcon className="w-10 h-10" />
@@ -150,25 +144,19 @@ export default class FoodDetail extends Component {
                   {this.state.name}
                 </h1>
                 {/* :::Description */}
-                <p className="mt-10 text-base text-gray-500">
-                  {this.state.name}
+                <p className="mt-1 0 text-base text-gray-500">
+                  {this.state.content}
+                </p>
+                <p className="text-base text-gray-500">
+                  {this.state.calorie}cal
                 </p>
                 {/* :::Features */}
                 <ul className="my-5 flex flex-col space-y-2">
-                  {this.state.ingredients.map((ingredient) => (
-                    <li
-                      key={ingredient.name}
-                      className="inline-flex items-center space-x-2 text-gray-500"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-yellow-600" />
-                      <span className="text-sm font-semibold">
-                        {ingredient.name}:
-                      </span>
-                      <span className="text-sm font-normal">
-                        {ingredient.quantity}
-                      </span>
-                    </li>
-                  ))}
+                  <li className="inline-flex items-center space-x-2 text-gray-500">
+                    <span className="text-sm font-semibold">
+                      {this.state.ingredients}
+                    </span>
+                  </li>
                 </ul>
               </div>
 
@@ -193,7 +181,7 @@ export default class FoodDetail extends Component {
                 {/* :::Add to cart button */}
                 <button
                   type="button"
-                  className="m-2.5 py-1.5 px-5 inline-flex items-center rounded-md bg-yellow-500 text-base text-white font-semibold uppercase whitespace-nowrap hover:bg-yellow-600"
+                  className="m-2.5 py-1.5 px-5 inline-flex items-center rounded-md bg-[#4e4e6b] text-base text-white font-semibold uppercase whitespace-nowrap hover:bg-blue-200"
                 >
                   <ShoppingBagIcon className="mr-3 w-6 h-6" />
                   Сагсанд хийх
@@ -245,41 +233,89 @@ export default class FoodDetail extends Component {
             </div>
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              <label>Нэр</label>
+        <iframe
+          width="100%"
+          height="500px"
+          src={`${this.state.video}`}
+          frameBorder="0"
+          className="my-10"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="Embedded youtube"
+        />
+        <div className="bg-[#4e4e6b] my-10 rounded-lg py-10">
+          <div className="flex flex-col items-center justify-center text-center">
+            <div className="lg:w-2/5 md:w-3/5 w-4/5">
+              <label className="mt-6 font-bold">Нэр</label>
               <input
+                className="mt-1 p-4 w-full rounded-xl border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 "
                 name="name"
                 value={this.state.name}
                 onChange={this.handleType}
               />
             </div>
-            <div>
-              <label>Тайлбар</label>
+            <div className="lg:w-2/5 md:w-3/5 w-4/5">
+              <label className="mt-6 font-bold">Тайлбар</label>
               <textarea
-                style={{ height: "20em" }}
+                className="mt-1 p-4 w-full rounded-xl border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 "
+                style={{ height: "10em" }}
                 name="content"
                 value={this.state.content}
                 onChange={this.handleType}
               />
             </div>
 
-            <div>
-              <label>rating</label>
+            <div className="lg:w-2/5 md:w-3/5 w-4/5">
+              <label className="mt-6 font-bold">rating</label>
               <input
+                className="mt-1 p-4 w-full rounded-xl border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 "
                 name="rating"
                 value={this.state.rating}
                 onChange={this.handleType}
               />
             </div>
+            <div className="lg:w-2/5 md:w-3/5 w-4/5">
+              <label className="mt-6 font-bold">Хугацаа</label>
+              <input
+                className="mt-1 p-4 w-full rounded-xl border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 "
+                name="time"
+                value={this.state.time}
+                onChange={this.handleType}
+              />
+            </div>
+
+            <div className="lg:w-2/5 md:w-3/5 w-4/5">
+              <label className="mt-6 font-bold">Орц</label>
+              <textarea
+                className="mt-1 p-4 w-full rounded-xl border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 "
+                style={{ height: "10em" }}
+                name="ingredients"
+                value={this.state.ingredients}
+                onChange={this.handleType}
+              />
+            </div>
 
             <div>
-              <button onClick={this.goBack}>Буцах</button>
+              <button
+                className="bg-white mt-6 border rounded-xl border-gray-300 p-2 hover:bg-purple-500 hover:text-white"
+                onClick={this.handleSave}
+              >
+                Хадгалах
+              </button>
               &nbsp;
-              <button onClick={this.handleSave}>Хадгалах</button>
+              <button
+                className="bg-white mt-6 border rounded-xl border-gray-300 p-2 hover:bg-purple-500 hover:text-white"
+                onClick={this.goBack}
+              >
+                Буцах
+              </button>
               &nbsp;
-              <button onClick={this.handleDelete}>Устгах</button>
+              <button
+                className="bg-white mt-6 border rounded-xl border-gray-300 p-2 hover:bg-purple-500 hover:text-white"
+                onClick={this.handleDelete}
+              >
+                Устгах
+              </button>
             </div>
           </div>
         </div>

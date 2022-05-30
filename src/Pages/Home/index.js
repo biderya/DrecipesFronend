@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import MyCard from "../../Components/MyCard";
 import { Row, Col } from "react-bootstrap";
 import MyLayout from "../../Components/MyLayout";
-import Footer from "../../Components/MyFooter/index";
+
 import "../../index.css";
 import Cooking from "../../assets/cooking.jpg";
 
@@ -23,7 +22,7 @@ export default function HomePage() {
               <div className="container px-4 mx-auto">
                 <div className="flex flex-wrap xl:items-center">
                   <div className="w-full md:w-1/2 px-4 mb-16 md:mb-0">
-                    <span className="inline-block py-px px-2 mb-4 text-xs leading-5 text-white bg-blue-500 uppercase rounded-9xl">
+                    <span className="inline-block py-px px-2 mb-4 text-xs leading-5 text-white bg-[#4e4e6b] uppercase rounded-9xl">
                       Апп-ийн лого
                     </span>
                     <h1 className="mb-6 text-3xl md:text-5xl lg:text-6xl leading-tight font-bold tracking-tight text-black">
@@ -39,7 +38,7 @@ export default function HomePage() {
                     <div className="flex flex-wrap">
                       <div className="w-full md:w-auto py-1 md:py-0 md:mr-4">
                         <a
-                          className="inline-block py-2 px-4 text-sm leading-5 text-blue-50 bg-blue-500 hover:bg-blue-600 font-medium focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-md"
+                          className="inline-block py-2 px-4 text-sm leading-5 text-blue-50 bg-[#4e4e6b] hover:bg-[#3e4e6b] font-medium focus:ring-2 focus:ring-[#4e4e6b] focus:ring-opacity-50 rounded-md"
                           href="/login"
                         >
                           Нэвтрэх
@@ -47,7 +46,7 @@ export default function HomePage() {
                       </div>
                       <div className="w-full md:w-auto py-1 md:py-0">
                         <a
-                          className="inline-block py-2 px-4 text-sm leading-5 text-blue-50 bg-blue-500 hover:bg-blue-600 font-medium focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-md"
+                          className="inline-block py-2 px-4 text-sm leading-5 text-blue-50 bg-[#4e4e6b] hover:bg-[#3e4e6b] font-medium focus:ring-2 focus:ring-[#4e4e6b] focus:ring-opacity-50 rounded-md"
                           href="register"
                         >
                           Бүртгүүлэх
@@ -80,7 +79,7 @@ export default function HomePage() {
               <div className="flex flex-wrap -mx-4">
                 <div className="w-full md:w-1/3 px-4">
                   <div className="h-full p-8 text-center hover:bg-white rounded-md hover:shadow-xl transition duration-200">
-                    <div className="inline-flex h-16 w-16 mb-7 mx-auto items-center justify-center text-white bg-blue-500 rounded-lg">
+                    <div className="inline-flex h-16 w-16 mb-7 mx-auto items-center justify-center text-white bg-[#4e4e6b] rounded-lg">
                       <svg
                         width={24}
                         height={21}
@@ -107,7 +106,7 @@ export default function HomePage() {
                 </div>
                 <div className="w-full md:w-1/3 px-4">
                   <div className="h-full p-8 text-center hover:bg-white rounded-md hover:shadow-xl transition duration-200">
-                    <div className="inline-flex h-16 w-16 mb-7 mx-auto items-center justify-center text-white bg-blue-500 rounded-lg">
+                    <div className="inline-flex h-16 w-16 mb-7 mx-auto items-center justify-center text-white bg-[#4e4e6b] rounded-lg">
                       <svg
                         width={22}
                         height={12}
@@ -134,7 +133,7 @@ export default function HomePage() {
                 </div>
                 <div className="w-full md:w-1/3 px-4">
                   <div className="h-full p-8 text-center hover:bg-white rounded-md hover:shadow-xl transition duration-200">
-                    <div className="inline-flex h-16 w-16 mb-7 mx-auto items-center justify-center text-white bg-blue-500 rounded-lg">
+                    <div className="inline-flex h-16 w-16 mb-7 mx-auto items-center justify-center text-white bg-[#4e4e6b] rounded-lg">
                       <svg
                         width={22}
                         height={18}
@@ -162,7 +161,6 @@ export default function HomePage() {
           </section>
         </>
       </MyLayout>
-      <Footer />
     </div>
   );
 }

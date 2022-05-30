@@ -21,7 +21,7 @@ import foodImg from "file:///C:/Users/user/OneDrive/Desktop/diplom_re/DrecipesFr
 import "./style.css";
 import UploadComponent from "../../Components/UploadImage";
 
-const UserFoods = () => {
+const MyCart = () => {
   const [id, setId] = useState(null);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
@@ -84,11 +84,11 @@ const UserFoods = () => {
     setId(localStorage.getItem("id"));
     // cookie-gees limit-iig unshij avna
     axios
-      .get(`users/${id}/foods`)
+      .get(`users/${id}`)
       .then((result) => {
         console.log("ahhhhhhhhhhhhhhhhhhhhhhhh", result.data.data);
         setLoading(false);
-        setFoods(result.data.data);
+        setFoods(result.data.data.cart);
       })
       .catch((err) => {
         setLoading(false);
@@ -186,7 +186,7 @@ const UserFoods = () => {
                 >
                   <div className="">
                     <div className=" container text-center">
-                      <div className="container_foto rounded-xl">
+                      <div className="container_foto">
                         <div className="ver_mas text-center">
                           <h2>Үзэх</h2>
                         </div>
@@ -208,9 +208,9 @@ const UserFoods = () => {
           <div>
             <Button
               style={{ marginBottom: 50 }}
+              variant="success"
               type="submit"
               onClick={showModal}
-              className="bg-blue-700"
             >
               Шинэ орц нэмэх
             </Button>
@@ -315,4 +315,4 @@ const UserFoods = () => {
   );
 };
 
-export default UserFoods;
+export default MyCart;

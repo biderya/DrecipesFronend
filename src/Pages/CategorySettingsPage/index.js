@@ -228,9 +228,9 @@ const CategorySettingsPage = () => {
                             margin: "auto",
                             marginTop: 3,
                             width: 100,
+                            backgroundColor: "#1d4ed8",
                           }}
                           size="sm"
-                          variant="warning"
                           onClick={() => getCategory(el.id)}
                           value={el.id}
                         >
@@ -280,7 +280,7 @@ const CategorySettingsPage = () => {
                               Хаах
                             </Button>
                             <Button
-                              variant="success"
+                              className="bg-blue-600"
                               type="submit"
                               onClick={() => updateCategory(categoryId)}
                             >
@@ -312,7 +312,7 @@ const CategorySettingsPage = () => {
             <div>
               <Button
                 style={{ marginBottom: 50 }}
-                variant="success"
+                className="bg-blue-700"
                 type="submit"
                 onClick={showModal}
               >
@@ -333,9 +333,7 @@ const CategorySettingsPage = () => {
                           handleCategoryName(e);
                         }}
                       />
-                      <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                      </Form.Text>
+                      <Form.Text className="text-muted"></Form.Text>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                       <Form.Label>Категорийн тайлбар</Form.Label>
@@ -353,7 +351,11 @@ const CategorySettingsPage = () => {
                   <Button variant="secondary" onClick={handleClose}>
                     Хаах
                   </Button>
-                  <Button variant="success" type="submit" onClick={addCategory}>
+                  <Button
+                    className="bg-blue-600"
+                    type="submit"
+                    onClick={addCategory}
+                  >
                     Хадгалах
                   </Button>
                 </Modal.Footer>

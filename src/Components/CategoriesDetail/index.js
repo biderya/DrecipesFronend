@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import axios from "../../axios";
-import { Link } from "react-router-dom";
-import { Spinner } from "react-bootstrap";
-import { Row, Col, InputGroup, FormControl } from "react-bootstrap";
-import MyLayout from "../../Components/MyLayout";
-import "./style.css";
-import foodImg from "../../assets/food.jpg";
-import "./style.css";
-// import { SERVERAPI } from "../../constants/routes";
+import MyLayout from "../MyLayout";
 
-const Foods = () => {
+import Alert from "react-bootstrap/Alert";
+import { HeartIcon, ShoppingBagIcon } from "@heroicons/react/solid";
+const CategoriesDetail = (props) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [foods, setFoods] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-
   const onSub = (e) => {
     setSearchValue(e.target.value);
   };
@@ -22,29 +16,25 @@ const Foods = () => {
   useEffect(() => {
     document.cookie =
       "limit=; expires=" + new Date(Date.now() - 360 * 24 * 60 * 60 * 1000);
-    console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii", document.cookie);
     setLoading(true);
-
+    console.log(props.match.params.id);
     // cookie-gees limit-iig unshij avna
     axios
-      .get("foods")
+      .get(`categories/${props.match.params.id}/foods`)
       .then((result) => {
         setLoading(false);
-        setFoods(result.data.data);
+        setCategories(result.data.data);
       })
       .catch((err) => {
         setLoading(true);
         setError(err.message);
       });
   }, []);
-
-  const filteredFoods = foods.filter(
+  const filteredCategories = categories.filter(
     (el) =>
       el.name.toLowerCase().includes(searchValue.toLowerCase()) ||
       el.content.toLowerCase().includes(searchValue.toLowerCase())
   );
-  // console.log("filteredFoods: ", filteredFoods);
-
   return (
     <MyLayout>
       {loading ? (
@@ -59,7 +49,7 @@ const Foods = () => {
           <hr />
           <div>
             <InputGroup className="mb-3">
-              <InputGroup.Text className="p-10 bg-[#f8f9fa]">
+              <InputGroup.Text className="p-10">
                 Хоол хайх: /нэр, тайлбар/
               </InputGroup.Text>
               <FormControl
@@ -74,26 +64,23 @@ const Foods = () => {
           </div>
 
           <Row md="12" className="container-fluid contenedor text-center">
-            {filteredFoods.map((el) => (
+            {filteredCategories.map((el) => (
               <Col md="4" key={el._id} className="">
                 <Link
-                  to={`/foods/${el._id}`}
+                  to={`/categories/${el._id}`}
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  <div className=" rounded-2xl">
+                  <div className="">
                     <div className=" container text-center">
-                      <div className="container_foto rounded-xl">
+                      <div className="container_foto">
                         <div className="ver_mas text-center">
                           <h2>Үзэх</h2>
                         </div>
                         <article className="text-left max-w-xs">
                           <h2>{el.name}</h2>
-                          <h4 className="truncate">{el.content}</h4>
+                          {/* <h4 className="truncate">{el.content}</h4> */}
                         </article>
-                        <img
-                          src={`http://localhost:8000/upload/${el.photo}`}
-                          className="rounded-xl"
-                        />
+                        <img src={foodImg} alt />
                       </div>
                     </div>
                   </div>
@@ -106,4 +93,4 @@ const Foods = () => {
     </MyLayout>
   );
 };
-export default Foods;
+export default CategoriesDetail;
