@@ -8,15 +8,9 @@ const Footer = () => {
         <div className="md:flex md:flex-wrap md:-mx-4 py-6 md:pb-12">
           <div className="footer-info lg:w-1/3 md:px-4">
             <h4 className="text-white text-2xl mb-4">
-<<<<<<< HEAD
               Хоолны жорын нэгдсэн сан
             </h4>
             <p className="text-white">
-=======
-            Хоолны жорын нэгдсэн сан
-            </h4>
-            <p className="text-gray-400">
->>>>>>> ff7d8e61ada03baf5cc02973cd7e9b80a66ea987
               Бид вэб сайт аа хүн болгонд нээлттэйгээр хийсэн
             </p>
             <div className="mt-4">
@@ -35,7 +29,6 @@ const Footer = () => {
                   тухай
                 </h6>
                 <div>
-<<<<<<< HEAD
                   <a href="#" className="text-white py-1 block hover:underline">
                     Байгуулага
                   </a>
@@ -43,24 +36,7 @@ const Footer = () => {
                     Зорилго
                   </a>
                   <a href="#" className="text-white py-1 block hover:underline">
-=======
-                  <a
-                    href="#"
-                    className="text-gray-400 py-1 block hover:underline"
-                  >
-                    Байгуулага
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-400 py-1 block hover:underline"
-                  >
-                    Зорилго
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-400 py-1 block hover:underline"
-                  >
->>>>>>> ff7d8e61ada03baf5cc02973cd7e9b80a66ea987
+
                     Хамт олон
                   </a>
                 </div>
@@ -70,32 +46,14 @@ const Footer = () => {
                   Санал болгох
                 </h6>
                 <div>
-<<<<<<< HEAD
-                  <a href="#" className="text-white py-1 block hover:underline">
+                <a href="#" className="text-white py-1 block hover:underline">
                     Нүүр
                   </a>
                   <a href="#" className="text-white py-1 block hover:underline">
                     Категори
                   </a>
                   <a href="#" className="text-white py-1 block hover:underline">
-=======
-                <a
-                    href="#"
-                    className="text-gray-400 py-1 block hover:underline"
-                  >
-                    Нүүр
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-400 py-1 block hover:underline"
-                  >
-                    Категори
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-400 py-1 block hover:underline"
-                  >
->>>>>>> ff7d8e61ada03baf5cc02973cd7e9b80a66ea987
+
                     Бүх хоол
                   </a>
                   
@@ -106,11 +64,7 @@ const Footer = () => {
           </div>
           <div className="md:w-1/3 md:px-4 md:text-center mt-12 lg:mt-0">
             <h5 className="text-lg text-white font-medium mb-4">
-<<<<<<< HEAD
               Манай сайтыг сонирхоорой
-=======
-               Манай сайтыг сонирхоорой
->>>>>>> ff7d8e61ada03baf5cc02973cd7e9b80a66ea987
             </h5>
             <button className="bg-indigo-600 text-white hover:bg-indigo-700 rounded py-2 px-6 md:px-12 transition-colors duration-300">
               Судлах
