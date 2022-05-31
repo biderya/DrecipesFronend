@@ -5,7 +5,7 @@ import { Spinner } from "react-bootstrap";
 import { Row, Col, InputGroup, FormControl } from "react-bootstrap";
 import MyLayout from "../../Components/MyLayout";
 import "./style.css";
-import foodImg from "file:///C:/Users/user/OneDrive/Desktop/diplom_re/DrecipesFronend/src/assets/food.jpg";
+import foodImg from "../../assets/food.jpg";
 // import { SERVERAPI } from "../../constants/routes";
 
 const Foods = () => {

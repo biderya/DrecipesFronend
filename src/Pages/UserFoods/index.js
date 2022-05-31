@@ -17,7 +17,7 @@ import {
 } from "react-bootstrap";
 import MyLayout from "../../Components/MyLayout";
 import { SERVERAPI } from "../../constants/routes";
-import foodImg from "file:///C:/Users/user/OneDrive/Desktop/diplom_re/DrecipesFronend/src/assets/food.jpg";
+import foodImg from "../../assets/food.jpg";
 import "./style.css";
 import UploadComponent from "../../Components/UploadImage";
 

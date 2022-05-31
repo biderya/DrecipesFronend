@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../axios";
 import { Link } from "react-router-dom";
-import { Spinner } from "react-bootstrap";
+import {Spinner } from "react-bootstrap";
 import { Row, Col, InputGroup, FormControl } from "react-bootstrap";
 import MyLayout from "../../Components/MyLayout";
 import "./style.css";

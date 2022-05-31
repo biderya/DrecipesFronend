@@ -122,7 +122,11 @@ export default class FoodDetail extends Component {
         <div className="mx-auto px-4 w-full max-w-7xl bg-white text-gray-700">
           <div className="flex flex-col lg:flex-row">
             {/* :PICTURES CONTAINER */}
+<<<<<<< HEAD
             <div className="py-8 w-full lg:w-1/2 flex flex-col items-center">
+=======
+            <div className="py-8 w-full lg:w-1/2 flex flex-col items-center bg-[url('../../assets/food.jpg">
+>>>>>>> ff7d8e61ada03baf5cc02973cd7e9b80a66ea987
               {/* ::Like Button */}
               <img
                 src={`http://localhost:8000/upload/${this.state.photo}`}
@@ -144,11 +148,16 @@ export default class FoodDetail extends Component {
                   {this.state.name}
                 </h1>
                 {/* :::Description */}
+<<<<<<< HEAD
                 <p className="mt-1 0 text-base text-gray-500">
                   {this.state.content}
                 </p>
                 <p className="text-base text-gray-500">
                   {this.state.calorie}cal
+=======
+                <p className="mt-10 text-base text-gray-500">
+                  {this.state.content}
+>>>>>>> ff7d8e61ada03baf5cc02973cd7e9b80a66ea987
                 </p>
                 {/* :::Features */}
                 <ul className="my-5 flex flex-col space-y-2">
