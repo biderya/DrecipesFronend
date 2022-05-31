@@ -210,7 +210,7 @@ const UserFoods = () => {
               style={{ marginBottom: 50 }}
               type="submit"
               onClick={showModal}
-              className="bg-blue-700"
+              className="bg-[#4e4e6b]"
             >
               Шинэ орц нэмэх
             </Button>
