@@ -145,9 +145,8 @@ export default class FoodDetail extends Component {
               {/* ::Gallery */}
               <div className="my-6 mx-auto">
                 <ul className="grid grid-flow-col auto-cols-fr gap-4">
-                 
                       <li
-                        key={this.state.photo}
+                        key={1}
                         className={`col-span-1 p-1 w-16 rounded border-2 ${
                           1 === this.state.mainPicture
                             ? "border-yellow-600"
@@ -166,7 +165,7 @@ export default class FoodDetail extends Component {
                         </button>
                       </li>
                       <li
-                        key={this.state.photo}
+                        key={2}
                         className={`col-span-1 p-1 w-16 rounded border-2 ${
                           2 === this.state.mainPicture
                             ? "border-yellow-600"
@@ -176,7 +175,7 @@ export default class FoodDetail extends Component {
                         <button
                           type="button"
                           className="block h-full rounded overflow-hidden"
-                          onClick={() => this.setState({ mainPicture: 2 })}
+                          onClick={() =>{ this.setState({ mainPicture: 2 }); console.log("2");}}
                         >
                           <img
                             src={`http://localhost:8000/upload/${this.state.photo}`}
@@ -185,7 +184,7 @@ export default class FoodDetail extends Component {
                         </button>
                       </li>
                       <li
-                        key={this.state.photo}
+                        key={3}
                         className={`col-span-1 p-1 w-16 rounded border-2 ${
                           3 === this.state.mainPicture
                             ? "border-yellow-600"
@@ -204,7 +203,7 @@ export default class FoodDetail extends Component {
                         </button>
                       </li>
                       <li
-                        key={this.state.photo}
+                        key={4}
                         className={`col-span-1 p-1 w-16 rounded border-2 ${
                           4 === this.state.mainPicture
                             ? "border-yellow-600"

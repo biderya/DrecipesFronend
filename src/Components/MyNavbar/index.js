@@ -27,11 +27,11 @@ const MyNavbar = (props) => {
   );
   return (
     <div>
-      <Navbar className=" bg-[#4e4e6b] border-gray-200">
-        <Container className="mx-36 container flex flex-wrap items-center justify-between mx-aut">
+      <Navbar className=" bg-[#4e4e6b] px-[600px] border-gray-200">
+        <Container className="container  flex flex-wrap items-center justify-between">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="container flex flex-wrap items-center justify-between mx-aut">
+            <Nav className="container flex flex-wrap items-center justify-between">
               <Nav.Link href="/">
                 <a className="text-white hover:no-underline font-medium">
                   Нүүр
