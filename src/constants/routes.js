@@ -11,4 +11,4 @@ export const FOODS = "/foods";
 export const FOODDETAIL = "/foods:id";
 export const CATEGORDETAIL = "/categories:id:foods";
 export const MYCART = "/mycart";
-export const SERVERAPI = "http://192.168.1.11:8000";
+export const SERVERAPI = "http://172.18.1.34:8000";

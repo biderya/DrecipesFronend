@@ -28,7 +28,7 @@ const MyNavbar = (props) => {
   return (
     <div>
       <Navbar className=" bg-[#4e4e6b] border-gray-200">
-        <Container className="container flex flex-wrap items-center justify-between mx-aut">
+        <Container className="mx-36 container flex flex-wrap items-center justify-between mx-aut">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="container flex flex-wrap items-center justify-between mx-aut">
@@ -84,35 +84,35 @@ const MyNavbar = (props) => {
               id="basic-nav-dropdown"
             >
               <NavDropdown.Item href="/register">
-                <a className="text-blue-800 hover:no-underline font-medium">
+                <a className="text-blue-800 hover:no-underline hover:bg-white font-medium">
                   Бүртгүүлэх
                 </a>
               </NavDropdown.Item>
               <NavDropdown.Item href="/login">
-                <a className="text-blue-800 hover:no-underline font-medium">
+                <a className="text-blue-800 hover:no-underline hover:bg-white font-medium">
                   Нэвтрэх
                 </a>
               </NavDropdown.Item>
               <NavDropdown.Item href="/userprofile">
-                <a className="text-blue-800 hover:no-underline font-medium">
+                <a className="text-blue-800 hover:no-underline hover:bg-white font-medium">
                   {" "}
                   Хувийн мэдээлэл
                 </a>
               </NavDropdown.Item>
               <NavDropdown.Item href="/mycart">
-                <a className="text-blue-800 hover:no-underline font-medium">
+                <a className="text-blue-800 hover:no-underline hover:bg-white font-medium">
                    Хэрэглэгчийн сагс
                 </a>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.2">
-                <a className="text-blue-800 hover:no-underline font-medium">
+                <a className="text-blue-800 hover:no-underline hover:bg-white font-medium">
                   Тохиргоо
                 </a>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={props.onLogout}>
-                <a className="text-blue-800 hover:no-underline font-medium">
+                <a className="text-blue-800 hover:no-underline hover:bg-white font-medium">
                   {" "}
                   Системээс гарах
                 </a>

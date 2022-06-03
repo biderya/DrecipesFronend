@@ -6,6 +6,12 @@ import Alert from "react-bootstrap/Alert";
 import { HeartIcon, ShoppingBagIcon } from "@heroicons/react/solid";
 
 export default class FoodDetail extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mainPicture: 0
+    };
+  }
   state = {
     name: null,
     photo: null,
@@ -94,6 +100,7 @@ export default class FoodDetail extends Component {
         });
       });
   };
+  
   starsNumber = Math.floor(this.state.rating);
   isHalfStar = !Number.isInteger(this.state.rating);
   emptyStars = 5 - Math.ceil(this.state.rating);
@@ -121,14 +128,103 @@ export default class FoodDetail extends Component {
         )}
         <div className="mx-auto px-4 w-full max-w-7xl bg-white text-gray-700">
           <div className="flex flex-col lg:flex-row">
-            <div className="py-8 w-full object-contain lg:w-1/2 flex flex-col items-center">
+            {/* <div className="py-8 w-full object-contain lg:w-1/2 flex flex-col items-center">
               <img
                 src={`http://localhost:8000/upload/${this.state.photo}`}
                 className="w-full h-96 my-auto"
               />
-            </div>
-            
+            </div> */}
 
+            <div className="m-auto py-8 w-full lg:w-1/2 flex flex-col items-center">
+              <div className="w-auto h-56 sm:h-72 lg:h-full max-h-96 overflow-hidden">
+                <img
+                  src={`http://localhost:8000/upload/${this.state.photo}`}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+              {/* ::Gallery */}
+              <div className="my-6 mx-auto">
+                <ul className="grid grid-flow-col auto-cols-fr gap-4">
+                 
+                      <li
+                        key={this.state.photo}
+                        className={`col-span-1 p-1 w-16 rounded border-2 ${
+                          1 === this.state.mainPicture
+                            ? "border-yellow-600"
+                            : "border-transparent"
+                        }`}
+                      >
+                        <button
+                          type="button"
+                          className="block h-full rounded overflow-hidden"
+                          onClick={() => this.setState({ mainPicture: 1 })}
+                        >
+                          <img
+                            src={`http://localhost:8000/upload/${this.state.photo}`}
+                            className="object-contain"
+                          />
+                        </button>
+                      </li>
+                      <li
+                        key={this.state.photo}
+                        className={`col-span-1 p-1 w-16 rounded border-2 ${
+                          2 === this.state.mainPicture
+                            ? "border-yellow-600"
+                            : "border-transparent"
+                        }`}
+                      >
+                        <button
+                          type="button"
+                          className="block h-full rounded overflow-hidden"
+                          onClick={() => this.setState({ mainPicture: 2 })}
+                        >
+                          <img
+                            src={`http://localhost:8000/upload/${this.state.photo}`}
+                            className="object-contain"
+                          />
+                        </button>
+                      </li>
+                      <li
+                        key={this.state.photo}
+                        className={`col-span-1 p-1 w-16 rounded border-2 ${
+                          3 === this.state.mainPicture
+                            ? "border-yellow-600"
+                            : "border-transparent"
+                        }`}
+                      >
+                        <button
+                          type="button"
+                          className="block h-full rounded overflow-hidden"
+                          onClick={() => this.setState({ mainPicture: 3 })}
+                        >
+                          <img
+                            src={`http://localhost:8000/upload/${this.state.photo}`}
+                            className="object-contain"
+                          />
+                        </button>
+                      </li>
+                      <li
+                        key={this.state.photo}
+                        className={`col-span-1 p-1 w-16 rounded border-2 ${
+                          4 === this.state.mainPicture
+                            ? "border-yellow-600"
+                            : "border-transparent"
+                        }`}
+                      >
+                        <button
+                          type="button"
+                          className="block h-full rounded overflow-hidden"
+                          onClick={() => this.setState({ mainPicture: 4 })}
+                        >
+                          <img
+                            src={`http://localhost:8000/upload/${this.state.photo}`}
+                            className="object-contain"
+                          />
+                        </button>
+                      </li>
+                </ul>
+              </div>
+            </div>
             {/* :PRODUCT DETAILS */}
             <div className="lg:py-8 w-full lg:w-1/2 flex flex-col lg:border-l-2 border-gray-200">
               {/* ::Description Container */}
