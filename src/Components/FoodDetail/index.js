@@ -100,7 +100,7 @@ export default class FoodDetail extends Component {
 
   render() {
     if (this.state.deleted) {
-      return <div>Хоол амжилттай устгагдлаа</div>;
+      return alert("Хоол амжилттай устгагдлаа");
     }
 
     return (
@@ -121,17 +121,13 @@ export default class FoodDetail extends Component {
         )}
         <div className="mx-auto px-4 w-full max-w-7xl bg-white text-gray-700">
           <div className="flex flex-col lg:flex-row">
-            <div className="py-8 w-full lg:w-1/2 flex flex-col items-center">
+            <div className="py-8 w-full object-contain lg:w-1/2 flex flex-col items-center">
               <img
                 src={`http://localhost:8000/upload/${this.state.photo}`}
-                className="w-full h-full"
+                className="w-full h-96 my-auto"
               />
-              <span className="self-start ml-10">
-                <button className="text-gray-300 hover:text-red-500">
-                  <HeartIcon className="w-10 h-10" />
-                </button>
-              </span>
             </div>
+            
 
             {/* :PRODUCT DETAILS */}
             <div className="lg:py-8 w-full lg:w-1/2 flex flex-col lg:border-l-2 border-gray-200">
@@ -142,15 +138,61 @@ export default class FoodDetail extends Component {
                   {this.state.name}
                 </h1>
                 {/* :::Description */}
-                <p className="mt-10 text-base text-gray-500">
-                  {this.state.content}
+                <p className="my-2 text-base text-gray-500">
+                  <div className="flex my-2.5 font-medium text-gray-800">
+                    Зохиогч: {this.state.author}
+                    <div className="mx-2 flex items-center">
+                      {/* ::::rating stars */}
+                      <div className="flex items-center space-x-1">
+                        {/* full stars */}
+                        {[...Array(this.starsNumber)].map((rating, index) => (
+                          <span key={index} className="flex-shrink-0">
+                            <svg
+                              className="w-4 h-4 text-yellow-500 fill-current"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />
+                            </svg>
+                          </span>
+                        ))}
+                        {/* half star */}
+                        {this.isHalfStar && (
+                          <span className="flex-shrink-0">
+                            <svg
+                              className="w-4 h-4 text-yellow-500 fill-current"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524v-12.005zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" />
+                            </svg>
+                          </span>
+                        )}
+                        {/* empty stars */}
+                        {[...Array(this.emptyStars)].map((rating, index) => (
+                          <span key={index} className="flex-shrink-0">
+                            <svg
+                              className="w-4 h-4 text-yellow-500 fill-current"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" />
+                            </svg>
+                          </span>
+                        ))}
+                      </div>
+                      {/* ::::all reviews */}
+                    </div>
+                  </div>
                 </p>
-                <p className="mt-10 text-base text-gray-500">
-                  Зохиогч: {this.state.author}
+                <p className="my-2 text-base text-black font-medium text-justify">
+                  <div className="font-bold text-black">Алхам:</div>
+                  {this.state.steps}
                 </p>
-                <ul className="my-5 flex flex-col space-y-2">
-                  <li className="inline-flex items-center space-x-2 text-gray-500">
+                <ul className="my-3 flex flex-col space-y-2">
+                  <li className="inline-flex items-center space-x-2 text-gray-800 text-justify">
                     <span className="text-sm font-semibold">
+                      <div className="font-bold text-black">Орц: </div>
                       {this.state.ingredients}
                     </span>
                   </li>
@@ -178,54 +220,12 @@ export default class FoodDetail extends Component {
                 {/* :::Add to cart button */}
                 <button
                   type="button"
-                  className="m-2.5 py-1.5 px-5 inline-flex items-center rounded-md bg-[#4e4e6b] text-base text-white font-semibold uppercase whitespace-nowrap hover:bg-blue-200"
+                  className="m-2.5 py-1.5 px-5 inline-flex items-center rounded-md bg-[#4e4e6b] text-base text-white font-semibold uppercase whitespace-nowrap"
                 >
                   <ShoppingBagIcon className="mr-3 w-6 h-6" />
                   Сагсанд хийх
                 </button>
                 {/* :::Reviews */}
-                <div className="m-2.5 flex items-center">
-                  {/* ::::rating stars */}
-                  <div className="flex items-center space-x-1">
-                    {/* full stars */}
-                    {[...Array(this.starsNumber)].map((rating, index) => (
-                      <span key={index} className="flex-shrink-0">
-                        <svg
-                          className="w-4 h-4 text-yellow-500 fill-current"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />
-                        </svg>
-                      </span>
-                    ))}
-                    {/* half star */}
-                    {this.isHalfStar && (
-                      <span className="flex-shrink-0">
-                        <svg
-                          className="w-4 h-4 text-yellow-500 fill-current"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524v-12.005zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" />
-                        </svg>
-                      </span>
-                    )}
-                    {/* empty stars */}
-                    {[...Array(this.emptyStars)].map((rating, index) => (
-                      <span key={index} className="flex-shrink-0">
-                        <svg
-                          className="w-4 h-4 text-yellow-500 fill-current"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z" />
-                        </svg>
-                      </span>
-                    ))}
-                  </div>
-                  {/* ::::all reviews */}
-                </div>
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import MyLayout from "../../Components/MyLayout";
 
 import "../../index.css";
-import Cooking from "../../assets/cooking.jpg";
+import Cooking from "../../assets/img_0944-01-1.jpg";
 
 export default function HomePage() {
   return (
@@ -38,7 +38,7 @@ export default function HomePage() {
                     <div className="flex flex-wrap">
                       <div className="w-full md:w-auto py-1 md:py-0 md:mr-4">
                         <a
-                          className="inline-block py-2 px-4 text-sm leading-5 text-blue-50 bg-[#4e4e6b] hover:bg-[#3e4e6b] font-medium focus:ring-2 focus:ring-[#4e4e6b] focus:ring-opacity-50 rounded-md"
+                          className="inline-block py-2 px-4 text-sm leading-5 text-blue-50 bg-[#4e4e6b] font-medium hover:text-gray-400 rounded-md"
                           href="/login"
                         >
                           Нэвтрэх
@@ -46,7 +46,7 @@ export default function HomePage() {
                       </div>
                       <div className="w-full md:w-auto py-1 md:py-0">
                         <a
-                          className="inline-block py-2 px-4 text-sm leading-5 text-blue-50 bg-[#4e4e6b] hover:bg-[#3e4e6b] font-medium focus:ring-2 focus:ring-[#4e4e6b] focus:ring-opacity-50 rounded-md"
+                          className="inline-block py-2 px-4 text-sm leading-5 text-blue-50 bg-[#4e4e6b]  font-medium hover:text-gray-400 rounded-md"
                           href="register"
                         >
                           Бүртгүүлэх
@@ -54,7 +54,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div className="w-full h-80  t-0 md:w-1/2 px-4">
+                  <div className="w-full h-96  mt-16 md:w-1/2">
                     <div className="relative object-cover object-center mx-auto md:mr-0 max-w-max">
                       <img
                         className="relative rounded-7xl"

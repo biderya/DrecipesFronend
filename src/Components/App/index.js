@@ -15,7 +15,8 @@ import MyNabvar from "../MyNavbar/index";
 import * as ROUTES from "../../constants/routes";
 import CategorySettingsPage from "../../Pages/CategorySettingsPage";
 import Register from "../../Pages/Register";
-
+import CategoriesDetail from "../CategoriesDetail/index";
+import MyCart from "../../Pages/MyCard";
 const App = () => {
   const history = useHistory();
   const [_token, setToken] = useState(null);
@@ -58,13 +59,15 @@ const App = () => {
             path={ROUTES.CATEGORYSETTINGS}
             component={CategorySettingsPage}
           />
+          <Route path="/categories:id/foods" component={CategoriesDetail} />
           <Route exact path={ROUTES.USERFOODS} component={UserFoods} />
           <Route
             exact
             path={ROUTES.LOGIN}
             render={() => <Login onLogin={handleLogin} />}
           />
-
+          <Route exact path={ROUTES.MYCART} component={MyCart} />
+           
           <Route path={ROUTES.USERPROFIILE}>
             <UserProfile id={localStorage.getItem("id")} />
           </Route>

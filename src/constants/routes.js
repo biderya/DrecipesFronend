@@ -9,6 +9,6 @@ export const LOGINPAGE = "/loginpage";
 export const USERPROFIILE = "/userprofile";
 export const FOODS = "/foods";
 export const FOODDETAIL = "/foods:id";
-export const CATEGORDETAIL = "/categories:id/foods";
+export const CATEGORDETAIL = "/categories:id:foods";
 export const MYCART = "/mycart";
 export const SERVERAPI = "http://192.168.1.11:8000";

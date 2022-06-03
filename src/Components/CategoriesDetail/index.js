@@ -1,6 +1,17 @@
 import React, { useEffect } from "react";
 import axios from "../../axios";
 import MyLayout from "../MyLayout";
+import  { useState } from "react";
+import { Link } from "react-router-dom";
+import {Spinner } from "react-bootstrap";
+import { Row, Col, InputGroup, FormControl } from "react-bootstrap";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useParams
+} from "react-router-dom";
 
 import Alert from "react-bootstrap/Alert";
 import { HeartIcon, ShoppingBagIcon } from "@heroicons/react/solid";
@@ -12,15 +23,15 @@ const CategoriesDetail = (props) => {
   const onSub = (e) => {
     setSearchValue(e.target.value);
   };
-
+  let { id } = useParams();
   useEffect(() => {
     document.cookie =
       "limit=; expires=" + new Date(Date.now() - 360 * 24 * 60 * 60 * 1000);
     setLoading(true);
-    console.log(props.match.params.id);
+    console.log("MOMO", props.match.params.id);
     // cookie-gees limit-iig unshij avna
     axios
-      .get(`categories/${props.match.params.id}/foods`)
+      .get(`categories/${id}/foods`)
       .then((result) => {
         setLoading(false);
         setCategories(result.data.data);
@@ -67,7 +78,7 @@ const CategoriesDetail = (props) => {
             {filteredCategories.map((el) => (
               <Col md="4" key={el._id} className="">
                 <Link
-                  to={`/categories/${el._id}`}
+                  to={`/foods/${el._id}`}
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <div className="">
@@ -80,7 +91,7 @@ const CategoriesDetail = (props) => {
                           <h2>{el.name}</h2>
                           {/* <h4 className="truncate">{el.content}</h4> */}
                         </article>
-                        <img src={foodImg} alt />
+                        <img src={`http://localhost:8000/upload/${el.photo}`}alt />
                       </div>
                     </div>
                   </div>

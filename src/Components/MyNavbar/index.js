@@ -27,7 +27,7 @@ const MyNavbar = (props) => {
   );
   return (
     <div>
-      <Navbar className="px-2 bg-[#4e4e6b] border-gray-200">
+      <Navbar className=" bg-[#4e4e6b] border-gray-200">
         <Container className="container flex flex-wrap items-center justify-between mx-aut">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -99,6 +99,12 @@ const MyNavbar = (props) => {
                   Хувийн мэдээлэл
                 </a>
               </NavDropdown.Item>
+              <NavDropdown.Item href="/mycart">
+                <a className="text-blue-800 hover:no-underline font-medium">
+                   Хэрэглэгчийн сагс
+                </a>
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.2">
                 <a className="text-blue-800 hover:no-underline font-medium">
                   Тохиргоо
