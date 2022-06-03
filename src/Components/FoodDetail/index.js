@@ -145,6 +145,9 @@ export default class FoodDetail extends Component {
                 <p className="mt-10 text-base text-gray-500">
                   {this.state.content}
                 </p>
+                <p className="mt-10 text-base text-gray-500">
+                  Зохиогч: {this.state.author}
+                </p>
                 <ul className="my-5 flex flex-col space-y-2">
                   <li className="inline-flex items-center space-x-2 text-gray-500">
                     <span className="text-sm font-semibold">
